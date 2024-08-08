@@ -1,0 +1,12 @@
+docker network create iff
+docker volume create postges-vol
+docker container run -d -p 5432:5432 --name fullstack_dev  -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=1q2w3e4r -e POSTGRES_DB=fullstack_db --network iff -v postges-vol:/var/lib/postgresql/data  postgres
+docker container run -d -p 8080:80 -e PGADMIN_DEFAULT_EMAIL=lglmoura@gmail.com -e PGADMIN_DEFAULT_PASSWORD=1q2w3e4r --name pgadmin4 --network iff dpage/pgadmin4
+docker build -t nextjsdocker .    
+docker container run -d -p 3000:3000 --network iff --name app nextjsdocker  
+
+docker tag nextjsdocker lglmoura/nextjs-docker:v1  
+docker login
+docker push lglmoura/nextjs-docker:v1
+
+docker-compose up -d

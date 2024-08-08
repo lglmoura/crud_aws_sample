@@ -6,6 +6,10 @@ const promBundle = require("express-prom-bundle");
 const config = require('./system-life');
 const middlewares = require('./middleware')
 
+require('dotenv').config()
+
+const APP_PORT = process.env.APP_PORT || "8080";
+
 const metricsMiddleware = promBundle({
     includeMethod: true, 
     includePath: true, 
@@ -78,6 +82,6 @@ app.get('/', async (req, res) => {
 });
 
 models.initDatabase();
-app.listen(8080);
+app.listen(APP_PORT);
 
-console.log('Aplicação rodando na porta 8080');
+console.log('Aplicação rodando na porta --> '+APP_PORT);
