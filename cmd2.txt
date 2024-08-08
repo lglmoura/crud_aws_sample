@@ -10,3 +10,7 @@ docker login
 docker push lglmoura/nextjs-docker:v1
 
 docker-compose up -d
+
+docker-compose  --env-file ./.env up -d
+
+docker-compose  --env-file ./.env down
