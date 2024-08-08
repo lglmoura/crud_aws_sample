@@ -1,6 +1,6 @@
 # crud_aws_sample
 
-### Objetivo
+### Objetivos
 O projeto  é uma aplicação escrita em NodeJS e tem como objetivo ser uma aplicação de exemplo pra trabalhar com o uso de containers.
 
 ### Configuração
