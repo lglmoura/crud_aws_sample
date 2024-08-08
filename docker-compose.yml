@@ -1,4 +1,4 @@
-version: '3.9'
+#version: '3.9'
 
 services:
   
@@ -26,6 +26,8 @@ services:
     
     links:   #Novo atributo incluso
       - aws_psql
+    depends_on:
+      - aws_psql
 
     build:
       context: .
@@ -39,6 +41,11 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
       - '8080:80'
+
+    links:   #Novo atributo incluso
+      - aws_psql
+    depends_on:
+      - aws_psql
 
     networks:
       - aws-network
