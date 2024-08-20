@@ -12,11 +12,11 @@ else
   echo ">[ERRO] Tenho um problema ao retornar a subnet da zona a. Será se existe uma subnet na zona A?"
 fi
 
-security_group_id=$(aws ec2 describe-security-groups --group-names "aula_aws" --query "SecurityGroups[0].GroupId" --output text 2>/dev/null)
+security_group_id=$(aws ec2 describe-security-groups --group-names "LabRole" --query "SecurityGroups[0].GroupId" --output text 2>/dev/null)
 if [ $? -eq 0 ]; then
-  echo "[OK] Security Group aula_aws foi criado"
+  echo "[OK] Security Group LabRole foi criado"
   
-  # Validar inbound rule para o security group 'aula_aws'
+  # Validar inbound rule para o security group 'LabRole'
   inbound_rule=$(aws ec2 describe-security-groups --group-ids $security_group_id --filters "Name=ip-permission.from-port,Values=3001" --filters "Name=ip-permission.cidr,Values=0.0.0.0/0" --output text)
 
   if [ -n "$inbound_rule" ]; then
@@ -25,7 +25,7 @@ if [ $? -eq 0 ]; then
     echo " >[ERRO] Regra de entrada para a porta 3001 não encontrada ou não está aberta para o mundo todo. Reveja a aula do Henrylle"
   fi
 
-  # Validar outbound rule para o security group 'aula_aws'
+  # Validar outbound rule para o security group 'LabRole'
   outobund_rule=$(aws ec2 describe-security-groups --group-ids $security_group_id --query "SecurityGroups[0].IpPermissionsEgress[?IpProtocol=='-1' && IpRanges[0].CidrIp=='0.0.0.0/0']" --output text)
   
   if [ -n "$outobund_rule" ]; then
@@ -34,7 +34,7 @@ if [ $? -eq 0 ]; then
     echo " >[ERRO] Regra de saída para o mundo não encontrada. "
   fi
 else
-  echo ">[ERRO] Não achei o security group aula_aws. Ele foi criado?"
+  echo ">[ERRO] Não achei o security group LabRole. Ele foi criado?"
 fi
 
 if aws iam get-role --role-name role-acesso-ssm &>/dev/null; then
