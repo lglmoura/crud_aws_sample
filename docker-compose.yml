@@ -5,13 +5,13 @@ services:
   aws_psql:
     image: postgres:alpine
     ports:
-      - ${DB_PORT}:5432
-    container_name: ${DB_HOST}
+      -  5432:5432 # ${DB_PORT}:5432
+    container_name: aws_psql #${DB_HOST}
     restart: always
     environment:
-          - POSTGRES_USER=${DB_USERNAME}
-          - POSTGRES_PASSWORD=${DB_PASSWORD}
-          - POSTGRES_DB=${DB_DATABASE}
+          - POSTGRES_USER=postgres #${DB_USERNAME}
+          - POSTGRES_PASSWORD=XwxlXhoukMsE3YjA19RQ #${DB_PASSWORD}
+          - POSTGRES_DB=aws_db #${DB_DATABASE}
     volumes:
       - pg-data:/var/lib/postgresql/data
     networks:
@@ -19,7 +19,7 @@ services:
   app:
     
     ports:
-      - ${APP_PORT}:3001
+      - 3001:3001 #${APP_PORT}:3001
     networks:
       - aws-network
     container_name: aws_app
@@ -37,8 +37,8 @@ services:
     image: dpage/pgadmin4
     container_name: aws_pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_USER}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_DEFAULT_EMAIL: lglmoura@gmail.com #${PGADMIN_USER}
+      PGADMIN_DEFAULT_PASSWORD: 1q2w3e4r #${PGADMIN_PASSWORD}
     ports:
       - '8080:80'
 
