@@ -3,7 +3,7 @@ const sequelize = require('sequelize');
 
 const DB_DATABASE = process.env.DB_DATABASE || "aws_db";
 const DB_USERNAME = process.env.DB_USERNAME || "postgres";
-const DB_PASSWORD = process.env.DB_PASSWORD || "XwxlXhoukMsE3YjA19RQ";
+const DB_PASSWORD = process.env.DB_PASSWORD || "1q2w3e4r";
 const DB_HOST = process.env.DB_HOST || "aws_psql";
 
 const seque = new sequelize.Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {

@@ -10,7 +10,7 @@ services:
     restart: always
     environment:
           - POSTGRES_USER=postgres #${DB_USERNAME}
-          - POSTGRES_PASSWORD=XwxlXhoukMsE3YjA19RQ #${DB_PASSWORD}
+          - POSTGRES_PASSWORD=1q2w3e4r #${DB_PASSWORD}
           - POSTGRES_DB=aws_db #${DB_DATABASE}
     volumes:
       - pg-data:/var/lib/postgresql/data
