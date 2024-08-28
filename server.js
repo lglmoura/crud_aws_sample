@@ -8,7 +8,7 @@ const middlewares = require('./middleware')
 
 require('dotenv').config()
 
-const APP_PORT = process.env.APP_PORT || "8080";
+const APP_PORT = process.env.APP_PORT || "3001";
 
 const metricsMiddleware = promBundle({
     includeMethod: true, 
