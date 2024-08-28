@@ -23,6 +23,11 @@ services:
     networks:
       - aws-network
     container_name: aws_app
+    environment:
+          - DB_USERNAME=postgres #${DB_USERNAME}
+          - DB_PASSWORD=1q2w3e4r #${DB_PASSWORD}
+          - DB_DATABASE=aws_db #${DB_DATABASE}
+          - DB_HOST=aws_psql 
     
     links:   #Novo atributo incluso
       - aws_psql
