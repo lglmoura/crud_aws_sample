@@ -27,7 +27,7 @@ services:
           - DB_USERNAME=postgres #${DB_USERNAME}
           - DB_PASSWORD=Aula*Infra #${DB_PASSWORD}
           - DB_DATABASE=aws_db #${DB_DATABASE}
-          - DB_HOST=db-crud.cpc9uvgqqc6f.us-east-1.rds.amazonaws.com
+          - DB_HOST=crud-db.cpc9uvgqqc6f.us-east-1.rds.amazonaws.com
     
     links:   #Novo atributo incluso
       - aws_psql
