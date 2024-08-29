@@ -25,9 +25,9 @@ services:
     container_name: aws_app
     environment:
           - DB_USERNAME=postgres #${DB_USERNAME}
-          - DB_PASSWORD=XwxlXhoukMsE3YjA19RQ #${DB_PASSWORD}
+          - DB_PASSWORD=SRdD8CFkMk7gyDQwX4Vu #${DB_PASSWORD}
           - DB_DATABASE=crudpsql #${DB_DATABASE}
-          - DB_HOST=crudpsql.cpc9uvgqqc6f.us-east-1.rds.amazonaws.com 
+          - DB_HOST=crud-db.cpc9uvgqqc6f.us-east-1.rds.amazonaws.com
     
     links:   #Novo atributo incluso
       - aws_psql
