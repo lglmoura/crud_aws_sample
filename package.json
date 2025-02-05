@@ -4,6 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "dev:docker:down": "docker-compose --env-file ./.env.dev -f docker-compose.yml  -f docker-compose.api.yml down",
+    "dev:docker:up": "docker-compose --env-file ./.env.dev -f docker-compose.yml  -f docker-compose.api.yml up -d --build",
+    "dev:docker:start": "pnpm run dev:docker:down && pnpm run dev:docker:up   && sleep 1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
