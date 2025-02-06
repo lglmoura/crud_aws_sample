@@ -1,20 +1,20 @@
-const sequelize = require('sequelize');
+const sequelize = require('sequelize')
 //require('dotenv').config()
 
-const DB_DATABASE = process.env.DB_DATABASE || "aws_db";
-const DB_USERNAME = process.env.DB_USERNAME || "postgres";
-const DB_PASSWORD = process.env.DB_PASSWORD || "1q2w3e4r";
-const DB_HOST = process.env.DB_HOST || "aws_psql";
+const DB_DATABASE = process.env.DB_DATABASE || "aws_db"
+const DB_USERNAME = process.env.DB_USERNAME || "postgres"
+const DB_PASSWORD = process.env.DB_PASSWORD || "1q2w3e4r"
+const DB_HOST = process.env.DB_HOST || "aws_psql"
 
 const seque = new sequelize.Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
     host: DB_HOST,
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true, // This will help you. But you will see nwe error
-        rejectUnauthorized: false // This line will fix new error
-      }
-    },
+    //dialectOptions: {
+      //ssl: {
+       // require: true, // This will help you. But you will see nwe error
+       // rejectUnauthorized: false // This line will fix new error
+      //}
+    //},
   });
 
 class Post extends sequelize.Model {
