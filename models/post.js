@@ -1,10 +1,10 @@
 const sequelize = require('sequelize')
 //require('dotenv').config()
 
-const DB_DATABASE = process.env.DB_DATABASE || "aws_db"
+const DB_DATABASE = process.env.DB_DATABASE || "fullstack_db"
 const DB_USERNAME = process.env.DB_USERNAME || "postgres"
 const DB_PASSWORD = process.env.DB_PASSWORD || "1q2w3e4r"
-const DB_HOST = process.env.DB_HOST || "aws_psql"
+const DB_HOST = process.env.DB_HOST || "localhost"
 
 const seque = new sequelize.Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
     host: DB_HOST,
