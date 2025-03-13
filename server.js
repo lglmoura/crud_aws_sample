@@ -84,4 +84,4 @@ app.get('/', async (req, res) => {
 models.initDatabase();
 app.listen(APP_PORT);
 
-console.log('Aplicação rodando na porta --> '+APP_PORT);
+console.log('Aplicação rodando na porta --> ss '+APP_PORT);
