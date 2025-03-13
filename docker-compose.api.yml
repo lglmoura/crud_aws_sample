@@ -9,9 +9,9 @@ services:
     
     container_name: aws_api
     environment:
-          - DB_USERNAME= postgres #${DB_USERNAME}
-          - DB_PASSWORD= Aula*Infra #${DB_PASSWORD}
-          - DB_DATABASE= aws_db # ${DB_DATABASE}
+          - DB_USERNAME=postgres #${DB_USERNAME}
+          - DB_PASSWORD=Aula*Infra #${DB_PASSWORD}
+          - DB_DATABASE=aws_db # ${DB_DATABASE}
           - DB_HOST=aws-db.cvb59mujllqx.us-east-1.rds.amazonaws.com
     
     
